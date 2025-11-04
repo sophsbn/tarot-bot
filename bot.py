@@ -188,7 +188,7 @@ def handle_user_commands(message):
 
     elif text in ['RUB', 'UAH', 'BYN', 'EUR', 'USD']:
         try:
-            with open(f"/{text.lower()}.jpg", "rb") as photo:
+            with open(f"{text.lower()}.jpg", "rb") as photo:
                 bot.send_photo(chat_id, photo)
         except FileNotFoundError:
             bot.send_message(chat_id, "Файл с ценами для этой валюты не найден.")
@@ -201,4 +201,5 @@ while True:
     except Exception as e:
         print(f"Ошибка polling: {e}")
         time.sleep(5)
+
 
